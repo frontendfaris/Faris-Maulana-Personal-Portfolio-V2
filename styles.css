@@ -1,0 +1,470 @@
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+:root {
+  --titlecolor: #8012bb;
+  --maybeuse: #345995;
+  --bodycolor: #f4f3ee;
+  --accent: #0f110c;
+  --accent2: #6a9c89;
+  --titlecolorgreyed: #6e0f8a;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  padding: 0 60px;
+
+  background-color: var(--bodycolor);
+}
+
+header {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  right: 0;
+  margin: 0 auto;
+  padding: 1rem 3.2rem;
+  width: 100%;
+  background-color: #f4f3ee8b;
+  box-shadow: 0px -5px 25px 0px rgb(184, 184, 162);
+  backdrop-filter: blur(5px);
+  opacity: 0;
+  animation: going-down 1s ease forwards;
+}
+
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navlogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+i {
+  color: var(--accent);
+  transition: all 0.4s ease;
+}
+
+i.socials {
+  font-size: 1.7rem;
+  margin-right: 10px;
+}
+
+i.bx.bxl-instagram {
+  font-size: 1.9rem;
+}
+
+i.rice {
+  font-size: 2.9rem;
+  margin-right: 20px;
+}
+
+i:hover {
+  transform: scale(1.5);
+}
+
+ol {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+li {
+  margin: 0 10px;
+  position: relative;
+  list-style-type: none;
+  transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+}
+
+li:hover {
+  transform: scale(1.15);
+}
+
+.navlink {
+  font-size: 1rem;
+  font-family: "Anton";
+  padding: 10px;
+  text-decoration: none;
+  color: var(--titlecolorgreyed);
+  letter-spacing: 1px;
+}
+
+.navlink.cv {
+  border: 2.5px solid var(--accent);
+  border-radius: 5px;
+}
+
+span {
+  color: var(--accent);
+}
+
+.navlink:before,
+.navlink:after {
+  content: "";
+  border-bottom: solid 2px var(--accent);
+  position: absolute;
+  bottom: 0;
+  width: 0;
+}
+
+.navlink:before {
+  left: 0;
+}
+.navlink:after {
+  right: 0;
+}
+
+.navlink:hover:before,
+.navlink:hover:after {
+  width: 50%;
+}
+
+.navlink:before,
+.navlink:after {
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+section {
+  height: 100vh;
+  padding-top: 4rem;
+}
+
+#landing-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/*Rung like ladders on a rung, if you want to understand why I named it that.*/
+
+#landing-page.rung {
+  max-width: 80%;
+  padding: 0.2rem 0.5rem;
+  display: block;
+}
+
+.rung * {
+  margin: 0 0 20px 0;
+}
+
+.small h2 {
+  font-size: 1.15rem;
+  font-family: "Bebas Neue";
+  letter-spacing: 3px;
+  word-spacing: 6px;
+  color: var(--accent);
+  animation: going-left 1s ease forwards;
+}
+
+.font-size {
+  font-size: 3.2rem;
+}
+
+.big h1 {
+  font-family: "Major Mono Display";
+  color: var(--titlecolor);
+  animation: going-right 1s ease forwards;
+}
+
+.second h1,
+#skills {
+  color: var(--titlecolorgreyed);
+  font-family: "Major Mono Display";
+}
+
+.para.rung {
+  max-width: 60%;
+}
+
+.para.rung p {
+  animation: going-left 1s ease forwards;
+  margin-top: 10px;
+}
+
+p {
+  font-family: "Arvo";
+  line-height: 1.4;
+  font-size: 18px;
+  color: var(--accent);
+}
+
+.contact.rung {
+  margin-top: 30px;
+}
+
+.link {
+  font-family: "Anton";
+  text-decoration: none;
+  color: var(--titlecolor);
+  border-radius: 7px;
+  border: 2px solid var(--accent);
+  padding: 18px 58px;
+  letter-spacing: 2px;
+  word-spacing: 7px;
+  transition: 1s all ease;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  animation: going-up 1s ease forwards;
+}
+
+.link::before {
+  background: var(--titlecolorgreyed);
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -10;
+  transition: all 0.6s ease;
+}
+
+.link::before {
+  width: 100%;
+  height: 0%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.link:hover::before {
+  height: 380%;
+}
+
+.link:hover {
+  color: var(--bodycolor);
+  transition: ease-in-out 0.1s 0.1s;
+}
+
+#aboutpage {
+  display: flex;
+}
+
+.about.rung {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100%;
+  max-width: 60%;
+}
+
+.aboutcontainer {
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.imgcontainer {
+  max-width: 40%;
+  height: 100%;
+  transition: all 1s;
+  border-radius: 40px;
+  background: linear-gradient(#1d0a25c3, #250a25c3),
+    url(media/Farisadmiringtheart.jpeg);
+  background-size: cover;
+  background-repeat: none;
+  width: 370px;
+  height: 370px;
+  border: none;
+  box-shadow: 8px 8px 0px var(--bodycolor), 10px 9px 1.5px 1px var(--accent);
+  margin: auto;
+}
+
+.imgcontainer:hover {
+  background: url(media/Farisadmiringtheart.jpeg);
+  background-size: cover;
+  background-repeat: none;
+  box-shadow: 8px 8px 0px var(--bodycolor);
+  border: none;
+}
+
+.imgcontainer {
+  box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.7);
+  transform: translatey(0px);
+  animation: float 6s ease-in-out infinite;
+}
+
+.about h2 {
+  font-size: 1.5rem;
+  color: var(--titlecolor);
+  font-family: "Major Mono Display";
+  margin-top: 10px;
+}
+
+.about p {
+  color: var(--accent);
+}
+
+.about span {
+  font-size: 1.2rem;
+  color: var(--titlecolorgreyed);
+}
+
+/*KEYFRAMES*/
+
+@keyframes float {
+  0% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.7);
+    transform: translatey(0px);
+  }
+  50% {
+    box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.3);
+    transform: translatey(-20px);
+  }
+  100% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.7);
+    transform: translatey(0px);
+  }
+}
+
+@keyframes going-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes going-up {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes going-right {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes going-left {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 510px) {
+  header {
+    padding: 0.1rem 0.6rem;
+    max-height: 100px;
+  }
+  body {
+    padding: 0 10px;
+  }
+  .font-size {
+    font-size: 1.9rem;
+  }
+  .para.rung {
+    max-width: 100%;
+  }
+  p {
+    font-size: 15px;
+  }
+  .small h2 {
+    font-size: 1rem;
+  }
+  .rung * {
+    margin: 0 0 15px 0;
+  }
+  .link {
+    padding: 13px 53px;
+    margin-top: 10px;
+  }
+  #navbar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 70px;
+  }
+
+  a:has(.socials) {
+    display: none;
+  }
+
+  i.rice {
+    font-size: 2.5rem;
+    margin-left: 10px;
+  }
+  #linkcontainer {
+    display: none;
+  }
+  .about.rung {
+    height: 75%;
+    max-width: 100%;
+  }
+
+  .aboutcontainer {
+    max-width: 100%;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .imgcontainer {
+    max-width: 80%;
+
+    background: url(media/Farisadmiringtheart.jpeg);
+    background-size: cover;
+    background-repeat: none;
+  }
+
+  .imgcontainer:hover {
+    background: url(media/Farisadmiringtheart.jpeg);
+    background-size: cover;
+    background-repeat: none;
+    box-shadow: 8px 8px 0px var(--bodycolor);
+    border: none;
+  }
+
+  .imgcontainer {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.7);
+    transform: translatey(0px);
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .about h2 {
+    font-size: 1.5rem;
+    color: var(--titlecolor);
+    font-family: "Major Mono Display";
+    margin-top: 10px;
+  }
+
+  .about p {
+    color: var(--accent);
+  }
+
+  .about span {
+    font-size: 1.2rem;
+    color: var(--titlecolorgreyed);
+  }
+}
